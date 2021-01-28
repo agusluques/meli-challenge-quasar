@@ -9,9 +9,11 @@ namespace FuegoDeQuasar
     using FluentValidation;
     using FuegoDeQuasar.Common.Infrastructure;
     using FuegoDeQuasar.Features.Common.IntelligenceService;
+    using FuegoDeQuasar.Persistance;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
@@ -58,6 +60,9 @@ namespace FuegoDeQuasar
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
 
             services.AddSingleton<IIntelligenceService, IntelligenceService>();
+
+            services.AddDbContext<SatelliteContext>(opt =>
+                                               opt.UseInMemoryDatabase("Satellite"));
         }
 
         /// <summary>

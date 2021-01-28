@@ -1,8 +1,8 @@
-﻿// <copyright file="TopSecretController.cs" company="PlaceholderCompany">
+﻿// <copyright file="TopSecretSplitController.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace FuegoDeQuasar.Features.TopSecret
+namespace FuegoDeQuasar.Features.TopSecretSplit
 {
     using System;
     using System.Collections.Generic;
@@ -13,31 +13,30 @@ namespace FuegoDeQuasar.Features.TopSecret
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
-    /// TopSecret controller.
+    /// TopSecretSplit controller.
     /// </summary>
     [ApiController]
     [ApiConventionType(typeof(DefaultApiConventions))]
-    [Route("api/topsecret")]
-    public class TopSecretController : Controller
+    [Route("api/topsecret_split")]
+    public class TopSecretSplitController : Controller
     {
         private readonly IMediator mediator;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TopSecretController"/> class.
+        /// Initializes a new instance of the <see cref="TopSecretSplitController"/> class.
         /// </summary>
         /// <param name="mediator">MediatR injection.</param>
-        public TopSecretController(IMediator mediator)
+        public TopSecretSplitController(IMediator mediator)
         {
             this.mediator = mediator;
         }
 
         /// <summary>
-        /// Post satellites information.
+        /// Post one satellite information.
         /// </summary>
-        /// <param name="command">Satellites information parameters.</param>
-        /// <returns>Sender information response.</returns>
+        /// <param name="command">Satellite information parameters.</param>
+        /// <returns>Response.</returns>
         [HttpPost]
-        [ProducesResponseType(typeof(Models.ReadModel), StatusCodes.Status200OK)]
         public async Task<IActionResult> PostAsync(Create.CommandRequest command) => await this.mediator.Send(command).ConfigureAwait(false);
     }
 }
