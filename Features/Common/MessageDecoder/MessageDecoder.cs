@@ -13,39 +13,13 @@ namespace FuegoDeQuasar.Features.Common.MessageDecoder
     public static class MessageDecoder
     {
         /// <summary>
-        /// Get each word with its max ocurrence for each list of messages.
-        /// It removes empty values.
+        /// Gets original message length.
         /// </summary>
         /// <param name="messages">List of list of strings.</param>
-        /// <returns>A dictionary with each word and its ocurrences.</returns>
-        public static IDictionary<string, int> GetWordsCount(IList<IList<string>> messages)
+        /// <returns>Message length.</returns>
+        public static int GetMessageLength(IList<IList<string>> messages)
         {
-            Dictionary<string, int> wordsCount = new Dictionary<string, int>();
-
-            foreach (IList<string> satelliteMessages in messages)
-            {
-                var ocurrencesCount = satelliteMessages
-                                    .Where(x => !string.IsNullOrWhiteSpace(x))
-                                    .GroupBy(key => key)
-                                    .Select(g => new { g.Key, Count = g.Count() });
-
-                foreach (var element in ocurrencesCount)
-                {
-                    if (wordsCount.TryGetValue(element.Key, out int value))
-                    {
-                        if (element.Count > value)
-                        {
-                            wordsCount[element.Key] = element.Count;
-                        }
-                    }
-                    else
-                    {
-                        wordsCount.Add(element.Key, element.Count);
-                    }
-                }
-            }
-
-            return wordsCount;
+            return messages.Max((message) => WordsBetweenFirstToEnd(message));
         }
 
         /// <summary>
@@ -63,6 +37,13 @@ namespace FuegoDeQuasar.Features.Common.MessageDecoder
                     satelliteMessages.RemoveRange(0, satelliteMessages.Count() - messageLength);
                 }
             }
+        }
+
+        private static int WordsBetweenFirstToEnd(IList<string> message)
+        {
+            int indexOfFirstNonEmptyWord = message.Select((message, index) => new { message, index }).FirstOrDefault(m => !string.IsNullOrEmpty(m.message)).index;
+
+            return message.Count - indexOfFirstNonEmptyWord;
         }
     }
 }

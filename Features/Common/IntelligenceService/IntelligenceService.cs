@@ -28,9 +28,7 @@ namespace FuegoDeQuasar.Features.Common.IntelligenceService
         /// <inheritdoc/>
         public string GetMessage(IList<IList<string>> messages)
         {
-            IDictionary<string, int> wordsCount = MessageDecoder.GetWordsCount(messages);
-
-            var messageLength = wordsCount.Sum(x => x.Value);
+            var messageLength = MessageDecoder.GetMessageLength(messages);
 
             MessageDecoder.NormalizeLists(messages, messageLength);
 
