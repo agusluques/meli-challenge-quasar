@@ -2,9 +2,9 @@
 ---
 * [Quick start](#quick-start)
 * [Endpoints](#endpoints)
-    * POST /api/topsecret
-    * POST /api/topsecret_split
-    * GET /api/topsecret_split
+    * [POST /api/topsecret](#post-apitopsecret)
+    * [POST /api/topsecret_split](#post-apitopsecret_split)
+    * [GET /api/topsecret_split](#get-apitopsecret_split)
 * [Implementation details](#implementation-details)
    * [Architecture](#architecture)
    * [Libraries](#libraries)
