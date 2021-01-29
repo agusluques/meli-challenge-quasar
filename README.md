@@ -71,10 +71,12 @@
 #### Architecture
 I decided to use the [Vertical Slice Architecture](https://jimmybogard.com/vertical-slice-architecture/) with [CQRS pattern](https://martinfowler.com/bliki/CQRS.html) instead of clean (or 'onion') architecture.
 
-![alt vertical slice architecture](https://jimmybogardsblog.blob.core.windows.net/jimmybogardsblog/3/2018/Picture0030.png)
+![alt vertical slice architecture](https://miro.medium.com/max/760/1*JHlN7ixDbPFgyjZh1GQIFQ.png)
+
 *Verical Slice Architecture*
 
 ![alt vertical slice architecture](https://martinfowler.com/bliki/images/cqrs/cqrs.png)
+
 *CQRS*
 
 #### Libraries
