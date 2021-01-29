@@ -25,5 +25,16 @@ namespace FuegoDeQuasar.Persistance
         /// Gets or sets the satellites dbset.
         /// </summary>
         public DbSet<Satellite> Satellites { get; set; }
+
+        /// <inheritdoc/>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Satellite>()
+                .HasMany(s => s.Messages)
+                .WithOne(m => m.Satellite)
+                .OnDelete(DeleteBehavior.ClientCascade);
+        }
+
     }
 }

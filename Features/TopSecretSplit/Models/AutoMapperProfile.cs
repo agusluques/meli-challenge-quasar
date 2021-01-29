@@ -18,7 +18,7 @@ namespace FuegoDeQuasar.Features.TopSecretSplit.Models
         public AutoMapperProfile()
         {
             this.CreateMap<Satellite, WriteModel>()
-                .ForMember(x => x.Message, o => o.ConvertUsing(new SatelliteMessageResolver()));
+                .ForMember(x => x.Message, o => o.ConvertUsing(new SatelliteMessageResolver(), "Messages"));
 
             this.CreateMap<WriteModel, Satellite>()
                 .ForMember(x => x.Messages, o => o.ConvertUsing(new MessageSatelliteResolver(), "Message"));

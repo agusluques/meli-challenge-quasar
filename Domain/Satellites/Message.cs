@@ -18,5 +18,10 @@ namespace FuegoDeQuasar.Domain.Satellites
         /// Gets or sets the order of the message.
         /// </summary>
         public int Order { get; set; }
+
+        /// <summary>
+        /// Gets or sets satellite where it belongs.
+        /// </summary>
+        public Satellite Satellite{ get; set; }
     }
 }

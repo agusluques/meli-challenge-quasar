@@ -38,5 +38,14 @@ namespace FuegoDeQuasar.Features.TopSecretSplit
         /// <returns>Response.</returns>
         [HttpPost]
         public async Task<IActionResult> PostAsync(Create.CommandRequest command) => await this.mediator.Send(command).ConfigureAwait(false);
+
+        /// <summary>
+        /// Get sender information.
+        /// </summary>
+        /// <param name="query">Query request.</param>
+        /// <returns>Response.</returns>
+        [HttpGet]
+        [ProducesResponseType(typeof(Models.ReadModel), StatusCodes.Status200OK)]
+        public async Task<IActionResult> PostAsync([FromQuery] GetAll.QueryRequest query) => await this.mediator.Send(query).ConfigureAwait(false);
     }
 }

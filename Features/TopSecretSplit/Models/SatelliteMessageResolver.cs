@@ -12,14 +12,12 @@ namespace FuegoDeQuasar.Features.TopSecretSplit.Models
     /// <summary>
     /// SatelliteMessageResolver.
     /// </summary>
-    internal class SatelliteMessageResolver : IValueConverter<Satellite, IList<string>>
+    internal class SatelliteMessageResolver : IValueConverter<IList<Message>, IList<string>>
     {
         /// <inheritdoc/>
-        public IList<string> Convert(Satellite sourceMember, ResolutionContext context)
+        public IList<string> Convert(IList<Message> sourceMember, ResolutionContext context)
         {
-            IList<Message> messages = sourceMember.Messages;
-
-            return sourceMember.Messages.OrderBy(m => m.Order).Select(m => m.Value).ToList();
+            return sourceMember.OrderBy(m => m.Order).Select(m => m.Value).ToList();
         }
     }
 }

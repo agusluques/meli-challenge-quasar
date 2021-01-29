@@ -25,5 +25,10 @@ namespace FuegoDeQuasar.Features.TopSecret
         /// Gets satellite missing error.
         /// </summary>
         public static ApiError SatelliteIsMissing => new ApiError(3, "Satellite info is missing.");
+
+        /// <summary>
+        /// Gets message empty error.
+        /// </summary>
+        public static ApiError MessageEmpty => new ApiError(4, "Must provide message list.");
     }
 }

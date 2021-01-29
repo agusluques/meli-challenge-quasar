@@ -19,7 +19,7 @@ namespace FuegoDeQuasar.Features.TopSecretSplit.Create
     using Microsoft.EntityFrameworkCore;
 
     /// <summary>
-    /// TopSecret Split handler.
+    /// TopSecret Split create handler.
     /// </summary>
     public class Handler : IRequestHandler<CommandRequest, IActionResult>
     {

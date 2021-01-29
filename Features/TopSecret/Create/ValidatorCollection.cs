@@ -31,6 +31,10 @@ namespace FuegoDeQuasar.Features.TopSecret.Create
                     satellite.RuleFor(x => x.Distance)
                     .GreaterThan(0)
                     .WithMessage(TopSecretErrors.NonPositiveDistance.Message);
+
+                    satellite.RuleFor(t => t.Message)
+                    .NotEmpty()
+                    .WithMessage(TopSecretErrors.MessageEmpty.Message);
                 });
         }
     }
