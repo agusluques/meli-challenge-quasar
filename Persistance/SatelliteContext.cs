@@ -35,6 +35,5 @@ namespace FuegoDeQuasar.Persistance
                 .WithOne(m => m.Satellite)
                 .OnDelete(DeleteBehavior.ClientCascade);
         }
-
     }
 }

@@ -22,6 +22,6 @@ namespace FuegoDeQuasar.Domain.Satellites
         /// <summary>
         /// Gets or sets satellite where it belongs.
         /// </summary>
-        public Satellite Satellite{ get; set; }
+        public Satellite Satellite { get; set; }
     }
 }
