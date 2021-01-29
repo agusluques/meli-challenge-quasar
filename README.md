@@ -6,7 +6,8 @@
     * POST /api/topsecret_split
     * GET /api/topsecret_split
 * [Implementation details](#implementation-details)
-* [Libraries](#libraries)
+   * [Architecture](#architecture)
+   * [Libraries](#libraries)
 * [Code smells and assumptions](#code-smells-and-assumptions)
 * [TODO](#todo)
 
@@ -85,11 +86,11 @@ I decided to use the [Vertical Slice Architecture](https://jimmybogard.com/verti
 - [Swashbuckle](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) (v5.6.3): For generation SwaggerUI.
 - [StyleCop.Analyzers](https://www.nuget.org/packages/StyleCop.Analyzers/1.1.118) (v1.1.118): For coding style analysis.
 
-#### Code smells and assumptions
-
+### Code smells and assumptions
+---
 - As the instructions ask to implement a `GetLocation` method which receives **only** an array of distances, I can only assume that the satellites are known and the order of them is also known.
 - I assume that the messages' gap is only at the beginning.
 
-#### TODO
-
+### TODO
+---
 - Unit tests and integration test (maybe using SpecFlow)
