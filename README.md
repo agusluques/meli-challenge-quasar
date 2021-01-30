@@ -7,6 +7,7 @@
     * [GET /api/topsecret_split](#get-apitopsecret_split)
 * [Implementation details](#implementation-details)
    * [Architecture](#architecture)
+   * [Deployment](#deployment)
    * [Libraries](#libraries)
 * [Code smells and assumptions](#code-smells-and-assumptions)
 * [TODO](#todo)
@@ -78,6 +79,18 @@ I decided to use the [Vertical Slice Architecture](https://jimmybogard.com/verti
 ![alt vertical slice architecture](https://martinfowler.com/bliki/images/cqrs/cqrs.png)
 
 *CQRS*
+
+#### Deployment
+
+- Web Api deployed on Azure App Service.
+   - Basic Plan B1
+      - 100 total ACU
+      - 1.75 GB memory
+      - A-Series compute equivalent
+      - Custom domain / SSL
+
+- Cloudflare DNS service.
+- Own subdomain.
 
 #### Libraries
 
