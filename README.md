@@ -19,9 +19,10 @@
         - [.NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)    
     - Simply run `dotnet run` from the root or use Visual Studio
     - Go to https://localhost:5001/swagger/index.html to see available endpoints
+    - **Tests**: run `dotnet test` to see tests execution
 
 - **Deployed app**
-    - Go to https://fuegodequasarmeli.azurewebsites.net/swagger/index.html to see available endpoints
+    - Go to https://quasar.agustinluques.com.ar/swagger/index.html to see available endpoints
 
 ### Endpoints
 ---
@@ -100,6 +101,7 @@ I decided to use the [Vertical Slice Architecture](https://jimmybogard.com/verti
 - [FluentValidation](https://www.nuget.org/packages/FluentValidation/) (v9.4.0): For validating query and commands requests.
 - [Swashbuckle](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) (v5.6.3): For generation SwaggerUI.
 - [StyleCop.Analyzers](https://www.nuget.org/packages/StyleCop.Analyzers/1.1.118) (v1.1.118): For coding style analysis.
+- [xUnit](https://www.nuget.org/packages/xunit/) (v2.4.1): For running test.
 
 ### Code smells and assumptions
 ---
@@ -108,4 +110,4 @@ I decided to use the [Vertical Slice Architecture](https://jimmybogard.com/verti
 
 ### TODO
 ---
-- Unit tests and integration test (maybe using SpecFlow)
+- Add more unit tests and integration test for API (maybe using SpecFlow)
