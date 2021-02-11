@@ -107,6 +107,7 @@ I decided to use the [Vertical Slice Architecture](https://jimmybogard.com/verti
 ---
 - As the instructions ask to implement a `GetLocation` method which receives **only** an array of distances, I can only assume that the satellites are known and the order of them is also known.
 - I assume that the messages' gap is only at the beginning.
+- `Domain/Entity.cs` can be Entity<T> to defined the type of the `Id`. It also can implement audit columns. 
 
 ### TODO
 ---
